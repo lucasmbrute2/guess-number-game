@@ -1,11 +1,9 @@
 'use strict';
 
 const textMessage = document.querySelector('.message')
-let text = document.querySelector('.message')
-const numberToGuess = Math.trunc(Math.random()*20)+1
 const score = document.querySelector('.score')
+const numberToGuess = Math.trunc(Math.random()*20)+1
 let scoreNumber =20
-// document.querySelector('.number').textContent = 40
 // document.querySelector('.guess').value = 40
 document.querySelector('.number').textContent = numberToGuess
 
@@ -17,6 +15,9 @@ document.querySelector('.check').addEventListener('click',()=>{
     if(scoreNumber>0){
         if (guess === numberToGuess){
             textMessage.textContent = 'Sucess!'
+            document.querySelector('body').style.backgroundColor ='#60b347';
+            
+            document.querySelector('.number').style.width= '30rem'
         }else if(guess>numberToGuess){
             textMessage.textContent= "Too High"
             scoreNumber --
