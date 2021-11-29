@@ -13,16 +13,21 @@ document.querySelector('.check').addEventListener('click',()=>{
     const guess = +document.querySelector('.guess').value;
     if(!guess){
         text.textContent = 'No number!'
-    }else if (guess === numberToGuess){
-        textMessage.textContent = 'Sucess!'
-    }else if(guess>numberToGuess){
-        textMessage.textContent= "Too High"
-        scoreNumber --
-        score.textContent = scoreNumber
+    }
+    if(scoreNumber>0){
+        if (guess === numberToGuess){
+            textMessage.textContent = 'Sucess!'
+        }else if(guess>numberToGuess){
+            textMessage.textContent= "Too High"
+            scoreNumber --
+            score.textContent = scoreNumber
+        }else{
+            textMessage.textContent="Too low"
+            scoreNumber --
+            score.textContent = scoreNumber
+        }
     }else{
-        textMessage.textContent="Too low"
-        scoreNumber --
-        score.textContent = scoreNumber
+        textMessage.textContent = 'You lost the game!'
     }
 })
 
