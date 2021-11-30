@@ -28,7 +28,8 @@ document.querySelector('.check').addEventListener('click',()=>{
                 numberText.style.width= '30rem'
 
                 if(scoreNumber>highscore){
-                    highscoreText.textContent = scoreNumber
+                    highscore = scoreNumber
+                    highscoreText.textContent = highscore
                 }
             
             }else if(guess>numberToGuess){
