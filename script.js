@@ -2,7 +2,7 @@
 
 const text = document.querySelector('.message')
 const score = document.querySelector('.score')
-const numberToGuess = Math.trunc(Math.random()*20)+1
+let numberToGuess = Math.trunc(Math.random()*20)+1
 const numberText = document.querySelector('.number')
 const body = document.querySelector('body')
 let scoreNumber =20
@@ -40,6 +40,7 @@ document.querySelector('.check').addEventListener('click',()=>{
 
 document.querySelector('.again').addEventListener('click',()=>{
     const guess = document.querySelector('.guess');
+    numberToGuess = Math.trunc(Math.random()*20)+1
     score.textContent = 20
     guess.value = ''
     text.textContent = 'Start guessing...'
