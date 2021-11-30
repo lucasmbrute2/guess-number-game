@@ -5,7 +5,9 @@ const score = document.querySelector('.score')
 let numberToGuess = Math.trunc(Math.random()*20)+1
 const numberText = document.querySelector('.number')
 const body = document.querySelector('body')
-let scoreNumber =20
+const highscoreText = document.querySelector('.highscore')
+let highscore = 0
+let scoreNumber = 20
 // document.querySelector('.guess').value = 40
 
 
@@ -14,8 +16,9 @@ document.querySelector('.check').addEventListener('click',()=>{
     if(!guess){
         text.textContent = 'No number!'
     }else{
-        if(scoreNumber>0){
-            if (guess === numberToGuess){
+        if(scoreNumber>0){          
+            if (guess === numberToGuess){              
+                
                 numberText.textContent = numberToGuess
                 
                 text.textContent = 'Sucess!'
@@ -23,6 +26,11 @@ document.querySelector('.check').addEventListener('click',()=>{
                 body.style.backgroundColor ='#60b347';              
                 
                 numberText.style.width= '30rem'
+
+                if(scoreNumber>highscore){
+                    highscoreText.textContent = scoreNumber
+                }
+            
             }else if(guess>numberToGuess){
                 text.textContent= "Too High"
                 scoreNumber --
